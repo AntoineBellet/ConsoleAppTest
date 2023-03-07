@@ -1,11 +1,36 @@
 ﻿using System.Runtime.ConstrainedExecution;
+using ConsoleAppTest.Model;
 
 class Program
 {
 
+
     static void Main(string[] args)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+        User user = new User();
+        Console.WriteLine("Quel est votre ID : ");
+        user.ID = int.Parse(Console.ReadLine());
+        Console.WriteLine("Quel est votre Prénom : ");
+        user.FirstName = Console.ReadLine();
+        Console.WriteLine("Quel est votre Nom : ");
+        user.LastName = Console.ReadLine();
+        Console.WriteLine("Quel est votre Âge : ");
+        user.Age = int.Parse(Console.ReadLine());
+        Console.WriteLine("Quel est votre Salaire annuel Brut : ");
+        user.Salary = int.Parse(Console.ReadLine().Replace("€", ""));
+        Console.WriteLine("Quel est votre Taux d'imposition : ");
+        user.Tax = double.Parse(Console.ReadLine().Replace("%", "")); Console.WriteLine("\nID : " + user.ID);
+        
+        
+        
+        Console.WriteLine("Prénom : " + user.FirstName);
+        Console.WriteLine("Nom : " + user.LastName);
+        Console.WriteLine("Âge : " + user.Age);
+        Console.WriteLine("Salaire Brut : " + user.Salary + "€");
+        Console.WriteLine("Taux d'imposition : " + user.Tax + "%");
+        Console.WriteLine("Salaire Net : " + user.CalculateSalary() + "€");
 
         Console.WriteLine("Enter your salary before tax ");
 
@@ -103,6 +128,11 @@ class Program
             Environment.Exit(1);
         }
     }
+
+
+
+
+
 
 }
 
