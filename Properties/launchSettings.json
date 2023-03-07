@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ConsoleAppTest": {
+      "commandName": "Project",
+      "commandLineArgs": "salary\r\ntaxe"
+    },
+    "ConsoleAppTestDebug": {
+      "commandName": "Project",
+      "commandLineArgs": "30000\r\n30.00"
+    }
+  }
+}
